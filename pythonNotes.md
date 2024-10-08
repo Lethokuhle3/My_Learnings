@@ -143,4 +143,79 @@ band2 = dict(vocals="plants", guitar ="page")
 A lambda function is a small anonymous function.
 A lambda function can take any number of arguments, but can only have one expression.
 
-*lambda arguments : expression*
+*Laambda arguments : expression*
+```py
+x = lambda a : a + 10
+print(x(5))
+
+x = lambda a, b : a * b
+print(x(5, 6))
+
+x = lambda a, b, c : a + b + c
+print(x(5, 6, 2))
+
+def myfunc(n):
+  return lambda a : a * n
+mydoubler = myfunc(2)
+mytripler = myfunc(3)
+
+print(mydoubler(11))
+print(mytripler(11))
+--------------------
+
+def myfunc(n):
+  return lambda a : a * n
+mytripler = myfunc(3)
+print(mytripler(11))
+```
+
+**CLASS:**
+
+ Class is like an object constructor, or a "blueprint" for creating objects.
+ ```py
+class MyClass:
+  x = 5
+
+  #Create an object named p1, and print the value of x:
+p1 = MyClass()
+print(p1.x)
+
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+p1 = Person("John", 36)
+print(p1.name)
+print(p1.age)
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def __str__(self):
+    return f"{self.name}({self.age})"
+
+p1 = Person("John", 36)
+print(p1)
+ ```
+
+ *Python Inheritance:*
+Inheritance allows us to define a class that inherits all the methods and properties from another class.
+Parent class is the class being inherited from, also called base class.
+Child class is the class that inherits from another class, also called derived class.
+
+```py
+class Person:
+  def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+  def printname(self):
+    print(self.firstname, self.lastname)
+
+#Use the Person class to create an object, and then execute the printname method:
+
+x = Person("John", "Doe")
+x.printname()
+```
